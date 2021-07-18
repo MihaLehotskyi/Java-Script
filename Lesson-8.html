@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .Header{
+        text-align: center;
+        width: 200px;
+        background: rgb(33, 204, 18);
+        border: solid 1px black; 
+        height: 100px;
+        display: block;
+    }
+    .lil{
+        text-align: center;
+        width: 150px;
+        background: rgb(204, 18, 18);
+        border: solid 1px black; 
+        height: 100px;
+    }
+    .big{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 200px;
+        background: #ccc;
+        border: solid 1px black; 
+    }
+    .block1 { 
+        width: 200px; 
+        background: #ccc;
+        padding: 5px;
+        padding-right: 20px; 
+        border: solid 1px black; 
+        margin-top: 20px;
+       }
+    .block2{
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <input id="buttonFunc" type="button" value="Button1">
+    <br>
+    <div id="text" class="block1"> <p>Custom div</p></div>
+    <br>
+    <input id="buttonFunc2" type="button" value="Button2" class="">
+
+    <div class="big">
+        <div id="clickable" class="Header"><h3>ЛНУ ім. Івана Франка</h3></div>
+        <div class="lil">---кафедра ІСМ</div>
+        <div class="lil">---кафедра ЕСМ</div>
+        <div class="lil">---кафедра політології</div>
+    </div>
+
+
+
+
+    <script src="Lesson-8.js"></script>
+    
+</body>
+</html>
