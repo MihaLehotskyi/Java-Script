@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Ajax get method</h1>
+    <form>
+        <label>Name</label><br><input type="text" id="userNameGet">
+        <br>
+        <label>Age</label><br><input type="text" id="userAgeGet">
+        <br>
+        <input value="Send by get" type="button" onclick="sendDataByGetMethod()">
+    </form>
+    <h1> Ajax post method</h1>
+    <form>
+        <label>Name</label><br><input type="text" id="userNamePost">
+        <br>
+        <label>Age</label><br><input type="text" id="userAgePost">
+        <br>
+        <input value="Send by post" type="button" onclick="sendDataByPostMethod()">
+    </form>
+
+    <script>
+        function sendDataByGetMethod(){
+            var userData = {
+                username:document.getElementById('userNameGet').value,
+                userage:document.getElementById('userAgeGet').value 
+            };
+            var xhr = new XMLHttpRequest();
+            var valid = ".ValidatedByGET";
+            if(userData.userage > 100 | userData.userage < 1){
+                alert("Error enter valid age!!!");
+            }else{
+                xhr.open("GET", "/userGet?username="+ userData.username + valid + "&userage=" + userData.userage + valid);
+                xhr.setRequestHeader("Content-type","application/json");
+                xhr.send();
+            }
+        }
+        function sendDataByPostMethod(){
+            var userData = {
+                username:document.getElementById('userNamePost').value,
+                userage:document.getElementById('userAgePost').value 
+            };
+            var xhr = new XMLHttpRequest();
+            
+            if(userData.userage > 100 | userData.userage < 1){
+                alert("Error enter valid age!!!");
+            }else{
+                xhr.open("POST", "/userPost");
+                xhr.setRequestHeader("Content-type","application/json");
+                xhr.send(JSON.stringify(userData));
+            }
+        }
+    </script>
+</body>
+</html>
